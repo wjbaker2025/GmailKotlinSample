@@ -4,17 +4,16 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient {
-    private val BASE_URL = "http://api.androidhive.info/json/"
+    private object Holder {
+        val BASE_URL = "http://api.androidhive.info/json/"
 
-    private var retrofit : Retrofit? = null
+        val INSTANCE: Retrofit = Retrofit.Builder()
+                        .baseUrl(BASE_URL)
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build()
+    }
 
-    fun getClient(): Retrofit {
-        if (retrofit == null) {
-            retrofit = Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-        }
-        return retrofit!!
+    companion object {
+        val instance: Retrofit by lazy { Holder.INSTANCE }
     }
 }
