@@ -1,13 +1,13 @@
 package org.hevin.gmailkotlion.model
 
-class Message {
-    var id: Int = -1
-    var from: String? = null
-    var subject: String? = null
-    var message: String? = null
-    var timestamp: String? = null
-    var picture: String? = null
-    var isImport: Boolean = false
-    var isRead: Boolean = false
-    var color: Int = -1
-}
+data class Message (
+    var id: Int,
+    var from: String,
+    var subject: String,
+    var message: String,
+    var timestamp: String,
+    var picture: String?,
+    var isImport: Boolean,
+    var isRead: Boolean,
+    var color: Int
+)

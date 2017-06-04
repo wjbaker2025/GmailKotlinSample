@@ -14,6 +14,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import org.hevin.gmailkotlion.R
 import org.hevin.gmailkotlion.adapter.MessageAdapter
+import org.hevin.gmailkotlion.helper.DividerItemDecoration
 import org.hevin.gmailkotlion.model.Message
 import org.hevin.gmailkotlion.network.ApiClient
 import org.hevin.gmailkotlion.network.ApiInterface
