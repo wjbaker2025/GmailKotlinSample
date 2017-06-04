@@ -44,7 +44,7 @@ class MessageAdapter(private val context: Context, private val messages: ArrayLi
         holder.message.text = msg.message
         holder.timestamp.text = msg.timestamp
 
-        holder.iconText.text = msg.from!!.substring(0, 1)
+        holder.iconText.text = msg.from.substring(0, 1)
         holder.itemView.isActivated = selectedItems.get(position, false)
 
         applyReadStatus(holder, msg)
